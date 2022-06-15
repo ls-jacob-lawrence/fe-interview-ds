@@ -46,6 +46,7 @@
         "react-dom": "^18"
     },
     "scripts": {
+        "prebuild": "rm -rf dist",
         "build": "rollup -c",
         "dev": "rollup -c -w",
         "test": "jest",
