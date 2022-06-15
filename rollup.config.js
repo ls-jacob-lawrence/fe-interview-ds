@@ -1,11 +1,18 @@
-// rollup.config.js
 import typescript from '@rollup/plugin-typescript';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
-export default {
-    input: 'src/index.ts',
-    output: {
-        dir: 'dist',
-        format: 'cjs',
+export default [
+    {
+        input: 'src/index.ts',
+        output: {
+            dir: 'dist',
+            format: 'cjs',
+        },
+        plugins: [
+            nodeResolve(),
+            commonjs(),
+            typescript({ compilerOptions: { module: 'esnext' } }),
+        ],
     },
-    plugins: [typescript({ compilerOptions: { module: 'esnext' } })],
-};
+];

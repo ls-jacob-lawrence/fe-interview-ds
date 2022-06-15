@@ -3,8 +3,11 @@
     "repository": "git://github.com/ls-jacob-lawrence/fe-interview-template.git",
     "version": "1.0.0",
     "main": "dist/index.js",
+    "types": "dist/src/index.d.ts",
     "devDependencies": {
         "@babel/core": "^7.18.5",
+        "@rollup/plugin-commonjs": "^22.0.0",
+        "@rollup/plugin-node-resolve": "^13.3.0",
         "@rollup/plugin-typescript": "^8.3.3",
         "@storybook/addon-actions": "^6.5.9",
         "@storybook/addon-essentials": "^6.5.9",
