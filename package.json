@@ -31,6 +31,7 @@
         "eslint-plugin-prettier": "^4.0.0",
         "eslint-plugin-react": "^7.30.0",
         "eslint-plugin-storybook": "^0.5.12",
+        "gh-pages": "^4.0.0",
         "husky": "^8.0.1",
         "jest": "^28.1.1",
         "jest-environment-jsdom": "^28.1.1",
@@ -53,7 +54,8 @@
         "test": "jest",
         "prepare": "husky install",
         "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "build:storybook": "build-storybook docs",
+        "deploy:storybook": "gh-pages -d docs"
     },
     "files": [
         "dist"
