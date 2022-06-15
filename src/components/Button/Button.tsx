@@ -1,27 +1,35 @@
 import React, { ButtonHTMLAttributes } from 'react';
+import { css } from '../../stitches.config';
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-    children: JSX.Element;
-    disabled?: boolean;
-};
-
-const styles: React.CSSProperties = {
+const style = css({
+    fontFamily: 'sans-serif',
     border: 'none',
     borderRadius: '4px',
     fontSize: '16px',
     padding: '16px',
-    color: 'white',
-    backgroundColor: '#2E61DE',
+    color: '$white',
+    backgroundColor: '$blue500',
     cursor: 'pointer',
     margin: '0',
-};
+    transition: 'background-color 0.2s linear',
+    '&:hover': {
+        backgroundColor: '$blue700',
+    },
+    '&:disabled': {
+        cursor: 'not-allowed',
+        backgroundColor: '$blue100',
+    },
+});
+
+/**
+ * A basic Button which accepts all HTMLButton Attributes
+ */
 export function Button({
     children,
-    disabled = false,
     ...restProps
-}: ButtonProps) {
+}: ButtonHTMLAttributes<HTMLButtonElement>) {
     return (
-        <button style={styles} disabled={disabled} {...restProps}>
+        <button className={style()} {...restProps}>
             {children}
         </button>
     );

@@ -4,7 +4,11 @@ import { Button } from './Button';
 
 describe('Button', () => {
     it('should render', () => {
-        render(<Button />);
-        expect(screen.getByText('hi')).toBeInTheDocument();
+        const click = jest.fn();
+        render(<Button onClick={click}>My button</Button>);
+        const myButton = screen.getByText('My button');
+        expect(myButton).toBeInTheDocument();
+        myButton.click();
+        expect(click).toHaveBeenCalled();
     });
 });
