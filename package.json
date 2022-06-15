@@ -1,9 +1,8 @@
 {
-    "name": "fe-interview-ds",
+    "name": "@ls-jacob-lawrence/fe-interview-ds",
+    "repository": "git://github.com/ls-jacob-lawrence/fe-interview-template.git",
     "version": "1.0.0",
-    "main": "dist/main.cjs.js",
-    "module": "dist/main.esm.js",
-    "browser": "dist/main.umd.js",
+    "main": "dist/index.js",
     "devDependencies": {
         "@babel/core": "^7.18.5",
         "@rollup/plugin-typescript": "^8.3.3",
