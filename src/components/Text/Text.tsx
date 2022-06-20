@@ -1,5 +1,5 @@
 import React, { HTMLAttributes } from 'react';
-import { css, styled } from '../../stitches.config';
+import { styled } from '../../stitches.config';
 
 type Variants = {
     size?: 'large' | 'small';

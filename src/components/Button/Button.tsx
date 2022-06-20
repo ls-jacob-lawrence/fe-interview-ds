@@ -1,7 +1,10 @@
 import React, { ButtonHTMLAttributes } from 'react';
-import { css } from '../../stitches.config';
+import { styled } from '../../stitches.config';
 
-const style = css({
+type Variants = {
+    width: 'full' | 'auto';
+};
+const StyledButton = styled('button', {
     fontFamily: 'sans-serif',
     border: 'none',
     borderRadius: '4px',
@@ -19,6 +22,17 @@ const style = css({
         cursor: 'not-allowed',
         backgroundColor: '$blue100',
     },
+
+    variants: {
+        width: {
+            full: {
+                width: '100%',
+            },
+            auto: {
+                width: 'auto',
+            },
+        },
+    },
 });
 
 /**
@@ -26,11 +40,12 @@ const style = css({
  */
 export function Button({
     children,
+    width = 'auto',
     ...restProps
-}: ButtonHTMLAttributes<HTMLButtonElement>) {
+}: Variants & ButtonHTMLAttributes<HTMLButtonElement>) {
     return (
-        <button className={style()} {...restProps}>
+        <StyledButton width={width} {...restProps}>
             {children}
-        </button>
+        </StyledButton>
     );
 }
